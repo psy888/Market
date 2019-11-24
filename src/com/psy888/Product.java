@@ -2,7 +2,7 @@ package com.psy888;
 
 public abstract class Product {
 
-    private static long id = 0;
+    protected static long id = 0;
 
     private String manufacturer;
     private String model;
@@ -12,9 +12,12 @@ public abstract class Product {
     private double price;
     private int warrantyMonthCnt;
 
+    protected long productId;
+
     private int quantity;
 
     {
+        productId = id;
         id++;
     }
 

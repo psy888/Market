@@ -16,8 +16,16 @@ public class Refrigerator extends Product {
     private double depthCm;
     private double weightKg;
 
-    public Refrigerator(String manufacturer, String model, double price, int quantity) {
+    public Refrigerator(String manufacturer, String model, double price, int quantity, int type, String color, boolean isNoFrost, double heightCm, double widthCm, double depthCm, double weightKg) {
         super(manufacturer, model, price, quantity);
+        this.type = type;
+        this.color = color;
+        this.isNoFrost = isNoFrost;
+        this.heightCm = heightCm;
+        this.widthCm = widthCm;
+        this.depthCm = depthCm;
+        this.weightKg = weightKg;
+        productId += 30000;
     }
 
     public String getColor() {

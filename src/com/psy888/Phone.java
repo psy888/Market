@@ -17,6 +17,7 @@ public class Phone extends Product {
         this.ramGb = ramGb;
         this.cpuFreqGHz = cpuFreqGHz;
         this.cpuCoreCount = cpuCoreCount;
+        productId += 20000;
     }
 
     public String getColor() {
@@ -71,7 +72,7 @@ public class Phone extends Product {
     @Override
     public String fullInfo() {
         String fullInfo = this.shortInfo() + "\n" +
-                "Цвет : \t" + this.color +"\n" +
+                "Цвет : \t" + this.color + "\n" +
                 "Кол-во сим-карт : \t" + this.simCardAmount + "\n" +
                 "Диогональ экрана : \t" + this.screenSizeInches + "\"\n" +
                 "Частота процессора : \t" + this.cpuFreqGHz + " GHz\n" +
