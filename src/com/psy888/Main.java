@@ -1,7 +1,6 @@
 package com.psy888;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
 
@@ -24,35 +23,11 @@ public class Main {
         products.add(new Phone("Xiaomi", "MI 9", 14000, 8, "Синий", 2, 7.0, 6, 2200, 4));
 
 
-        Scanner userInput = new Scanner(System.in);
-        String userChoice = "";
-        do {
-            //todo list all items
-            if (userChoice.matches("\\d+")) {
-                System.out.println(products.get(Integer.parseInt(userChoice.trim())).fullInfo());
-            } else {
-                switch (userChoice.trim()) {
-                    case "*":
-                        return;
-                    case "-":
-                    default:
-                        showList(products);
-                        break;
-                }
-            }
+        Menu menu = new Menu(products);
+        menu.startMenu();
 
-            //нижнее меню
-
-            System.out.println("\n|\t\"*\" - выход\t|\t\"0 - " + products.size() + "\" - выбор продукта\t|\t" + (userChoice.matches("\\d+") ? "\"-\" - назад к общему списку\t|" : ""));
-            userChoice = userInput.nextLine();
-        } while (!userChoice.contentEquals("*"));
     }
 
-    static void showList(ArrayList<Product> products) {
-        for (int i = 0; i < products.size(); i++) {
-            System.out.println(i + ". " + products.get(i).shortInfo());
 
-        }
-    }
 
 }
