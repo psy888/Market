@@ -66,7 +66,17 @@ public class Menu {
 //                        break;
                     case COMMAND_CONFIRM_ORDER:
                         //todo create order and put to ordersList
-                        break;
+                        Order confirmedOrder = new Order(cart);
+                        if(orders.add(confirmedOrder)){
+                            UIOut.printMsg("Заказ оформлен!");
+                            UIOut.printMsg(confirmedOrder.orderInfo());
+                            cart.clear();//clear Cart!!!!
+                        }else {
+                            UIOut.printMsg("Возникла ошибка");
+                        }
+                        setDefUserInput();
+                        continue;
+//                        break;
                     case COMMAND_EXIT:
                         scanner.close();
                         return;
